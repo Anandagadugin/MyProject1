@@ -1,1 +1,1 @@
-console.log('Pushing first code changes')
+console.log('Pushing first code changes');
