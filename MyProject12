@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            form {
+                    background-color: rgb(147, 151, 173);
+                    text-align: center ;
+            }
+            input {
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+       
+            <form onsubmit="signup(event)"> 
+            <!-- <form onsubmit = "SaveToLocalStorage(event)"></form> -->
+            <h2> Hospital appointment </h2>
+            <h3> Please fill the details only if you should visit hospital on selected date </h3>
+            <label> Name </label>
+            <br />
+            <input type = 'text' name="username" required/>
+            <br />
+            <label> Email </label>
+            <br />
+            <input type="email" email = "emailId" required/>
+            <br />
+            <label> Phone number </label>
+            <br />
+            <input type ="PhoneNum" required/>
+            <br />
+            <br />
+            <label> When you will be visiting our hospital? </label>
+            <br />
+            <br />
+            <input type="date" />
+            <br />
+            <button> submit </button>
+         
+            
+        </form>
+        <script>
+            function signup(event) {
+                event.preventDefault();
+                const name = event.target.username.value;
+                localStorage.setItem('name', name);
+
+                let name_serialized = JSON.stringify(name);
+                localStorage.setItem("name", name_serialized);
+                let name_deserialized = JSON.parse(localStorage.getItem("name"));
+
+                console.log(name_deserialized);   
+                localStorage.setItem(obj.name, JSON.stringify(obj))
+                showOncreen(obj);
+            }
+            function showOncreen(obj){
+                const parentElement = document.getElementById('name')
+                
+                parentElement.innerHTML = <li> $(obj.name) </li>
+            }
+        </script>
+        
+    </body>
+</html>
